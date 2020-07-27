@@ -7,7 +7,6 @@ pipeline {
    stage ('Test Pipeline') {
      steps {
       echo "Show Docker"
-      echo "Start Docker"
       sh '''
         docker --version
         docker image ls
