@@ -10,6 +10,7 @@ pipeline {
       sh '''
         docker --version
         docker image ls
+        docker container ls
         
         echo "You can do docker-compose, adn other command her!!"
       '''
