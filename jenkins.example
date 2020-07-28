@@ -16,15 +16,6 @@ pipeline {
       '''
      }
    }
-   
-   stage ('Deployment : Docker Compose And Load Balancer') {
-     steps {
-      sh '''
-       cd Docker
-       docker-compose up -f docker-compose.yml $(cat docker/compose-arguments)
-
-      '''
-     }
-   } 
+ 
  }
 }
