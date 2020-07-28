@@ -21,10 +21,20 @@ pipeline {
      steps {
       sh '''
        cd Docker
-       docker-compose up -f docker-compose.yml $(cat docker/compose-arguments)
-
+       docker-compose up -f docker-compose.yml $(cat arguments/compose-arguments)
       '''
      }
    } 
+
+   stage ('Deploy: Show Docker Compose Result') {
+     steps {
+       sh '''
+        cd Docker
+        docker-compose -f docker-compose.yml ps
+        docker-compose container ls 
+       '''
+     }
+   }
+
  }
 }
